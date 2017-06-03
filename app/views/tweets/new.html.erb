@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+<p id="notice"><%= notice %></p>
+
+<%= form_for(@tweet, url: choose_new_or_edit) do |f| %>
+  <% if @tweet.errors.any? %>
+    <div id = "error_explanation">
+      <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_area :content, :size=>"64x8" %>
+  <br>
+  <%= f.submit "つぶやく", class: 'btn btn-primary btn-block'%>
+<% end %>
+
+<%= link_to "つぶやき一覧にもどる", tweets_path, class: 'btn btn-primary btn-block' %>
+
+</div>
+</div>

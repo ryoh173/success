@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+<%= form_for(@tweet) do |f| %>
+  <%= f.text_area :content, :size=>"64x8" %>
+  <br>
+  <%= f.submit "つぶやきを編集する",  class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to "つぶやき一覧にもどる", tweets_path,  class: 'btn btn-primary btn-block' %>
+</div>
+</div>
